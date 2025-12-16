@@ -25,11 +25,11 @@ def caesar_decrypt(text, shift):
 
 # Password strength checker function (optional)
 def is_strong_password(password):
-     pass
+    # ...
 
 # Password generator function (optional)
 def generate_password(length):
-     pass
+     """
     Generate a random strong password of the specified length.
 
     Args:
@@ -46,42 +46,27 @@ usernames = []
 
 # Function to add a new password 
 def add_password():
-    website = input("Enter website: ")
-    username = input("Enter username: ")
+    """
+    Add a new password to the password manager.
 
-    choice = input("Do you want to generate a strong password? (y/n): ").lower()
-    if choice == "y":
-        length = int(input("Enter desired password length: "))
-        password = generate_password(length)
-        print(f"Generated password: {password}")
-    else:
-        password = input("Enter password: ")
+    This function should prompt the user for the website, username,  and password and store them to lits with same index. Optionally, it should check password strengh with the function is_strong_password. It may also include an option for the user to
+    generate a random strong password by calling the generate_password function.
 
-    if not is_strong_password(password):
-        print("Warning: Password may be weak.")
-
-    shift = 3  # Caesar shift
-    encrypted = caesar_encrypt(password, shift)
-
-    websites.append(website)
-    usernames.append(username)
-    encrypted_passwords.append(encrypted)
-
-    print("Password added successfully.")
+    Returns:
+        None
+    """
 
 # Function to retrieve a password 
 def get_password():
-    website = input("Enter website to retrieve: ")
-    if website in websites:
-        index = websites.index(website)
-        username = usernames[index]
-        encrypted = encrypted_passwords[index]
-        decrypted = caesar_decrypt(encrypted, 3)
-        print(f"Website: {website}")
-        print(f"Username: {username}")
-        print(f"Password: {decrypted}")
-    else:
-        print("Website not found.")
+    """
+    Retrieve a password for a given website.
+
+    This function should prompt the user for the website name and
+    then display the username and decrypted password for that website.
+
+    Returns:
+        None
+    """
 
 # Function to save passwords to a JSON file 
 def save_passwords():
