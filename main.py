@@ -62,12 +62,18 @@ def add_password(website, username, password):
     encrypted_passwords.append(encrypted)
 
 # Function to retrieve a password 
-def get_password():
-    pass
+def get_password(website):
+    if website in websites:
+        idx = websites.index(website)
+        user = usernames[idx]
+        pw = caesar_decrypt(encrypted_passwords[idx], SHIFT)
+        return user, pw
+    return None, None
 
 # Function to save passwords to a JSON file 
-def save_passwords():
-    pass
+def save_passwords(password_list, filename):
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(password_list, f)
 
 # Function to load passwords from a JSON file 
 def load_passwords():
