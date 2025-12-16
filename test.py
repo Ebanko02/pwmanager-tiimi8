@@ -72,7 +72,6 @@ class TestPasswordManager(unittest.TestCase):
         self.assertEqual(p, password)
 
     def test_get_password(self):
-        # lisää ensin testidataa vaultiin
         add_password("example.com", "user123", "P@ssw0rd")
 
         website = "example.com"
