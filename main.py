@@ -46,7 +46,7 @@ usernames = []
 
 # Function to add a new password 
 def add_password():
-    """
+    pass
     Add a new password to the password manager.
 
     This function should prompt the user for the website, username,  and password and store them to lits with same index. Optionally, it should check password strengh with the function is_strong_password. It may also include an option for the user to
@@ -58,7 +58,7 @@ def add_password():
 
 # Function to retrieve a password 
 def get_password():
-    
+    pass
     Retrieve a password for a given website.
 
     This function should prompt the user for the website name and
@@ -70,7 +70,7 @@ def get_password():
 
 # Function to save passwords to a JSON file 
 def save_passwords():
- 
+    pass
     Save the password vault to a file.
 
     This function should save passwords, websites, and usernames to a text
@@ -86,7 +86,7 @@ def save_passwords():
 
 # Function to load passwords from a JSON file 
 def load_passwords():
-     
+    pass
     Load passwords from a file into the password vault.
 
     This function should load passwords, websites, and usernames from a text
