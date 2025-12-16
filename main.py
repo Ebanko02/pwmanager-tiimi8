@@ -42,8 +42,13 @@ def is_strong_password(password: str) -> bool:
     return True
 
 # Password generator function (optional)
-def generate_password(length):
-    pass
+def generate_password(length: int) -> str:
+    # testien vaatimus: palauttaa oikean pituisen ja vahvan
+    alphabet = string.asciiletters + string.digits + string.punctuation
+    while True:
+        pw = "".join(random.choice(alphabet) for  in range(length))
+        if is_strong_password(pw):
+            return pw
 
 # Initialize empty lists to store encrypted passwords, websites, and usernames
 encrypted_passwords = []
