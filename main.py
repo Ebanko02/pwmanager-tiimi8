@@ -43,7 +43,6 @@ def is_strong_password(password: str) -> bool:
 
 # Password generator function (optional)
 def generate_password(length: int) -> str:
-    # testien vaatimus: palauttaa oikean pituisen ja vahvan
     alphabet = string.asciiletters + string.digits + string.punctuation
     while True:
         pw = "".join(random.choice(alphabet) for  in range(length))
@@ -56,8 +55,11 @@ websites = []
 usernames = []
 
 # Function to add a new password 
-def add_password():
-    pass
+def add_password(website, username, password):
+    encrypted = caesar_encrypt(password, SHIFT)
+    websites.append(website)
+    usernames.append(username)
+    encrypted_passwords.append(encrypted)
 
 # Function to retrieve a password 
 def get_password():
