@@ -37,7 +37,7 @@ def generate_password(length):
 
     Returns:
         str: A random strong password.
-    """
+    
 
 # Initialize empty lists to store encrypted passwords, websites, and usernames
 encrypted_passwords = []
@@ -54,11 +54,11 @@ def add_password():
 
     Returns:
         None
-    """
+    
 
 # Function to retrieve a password 
 def get_password():
-    """
+    
     Retrieve a password for a given website.
 
     This function should prompt the user for the website name and
@@ -66,11 +66,11 @@ def get_password():
 
     Returns:
         None
-    """
+    
 
 # Function to save passwords to a JSON file 
 def save_passwords():
- """
+ 
     Save the password vault to a file.
 
     This function should save passwords, websites, and usernames to a text
@@ -78,15 +78,15 @@ def save_passwords():
 
     Returns:
         None
-    """
+    
 
     Returns:
         None
-    """
+    
 
 # Function to load passwords from a JSON file 
 def load_passwords():
-     """
+     
     Load passwords from a file into the password vault.
 
     This function should load passwords, websites, and usernames from a text
