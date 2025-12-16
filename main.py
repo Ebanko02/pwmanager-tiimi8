@@ -30,14 +30,6 @@ def is_strong_password(password):
 # Password generator function (optional)
 def generate_password(length):
     pass
-    Generate a random strong password of the specified length.
-
-    Args:
-        length (int): The desired length of the password.
-
-    Returns:
-        str: A random strong password.
-    
 
 # Initialize empty lists to store encrypted passwords, websites, and usernames
 encrypted_passwords = []
@@ -47,53 +39,18 @@ usernames = []
 # Function to add a new password 
 def add_password():
     pass
-    Add a new password to the password manager.
-
-    This function should prompt the user for the website, username,  and password and store them to lits with same index. Optionally, it should check password strengh with the function is_strong_password. It may also include an option for the user to
-    generate a random strong password by calling the generate_password function.
-
-    Returns:
-        None
-    
 
 # Function to retrieve a password 
 def get_password():
     pass
-    Retrieve a password for a given website.
-
-    This function should prompt the user for the website name and
-    then display the username and decrypted password for that website.
-
-    Returns:
-        None
-    
 
 # Function to save passwords to a JSON file 
 def save_passwords():
     pass
-    Save the password vault to a file.
-
-    This function should save passwords, websites, and usernames to a text
-    file named "vault.txt" in a structured format.
-
-    Returns:
-        None
-    
-
-    Returns:
-        None
-    
 
 # Function to load passwords from a JSON file 
 def load_passwords():
     pass
-    Load passwords from a file into the password vault.
-
-    This function should load passwords, websites, and usernames from a text
-    file named "vault.txt" (or a more generic name) and populate the respective lists.
-
-    Returns:
-        None
 
   # Main method
 def main():
