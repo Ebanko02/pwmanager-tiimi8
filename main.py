@@ -102,13 +102,22 @@ def save_passwords(password_list=None, filename="vault.txt"):
         json.dump(password_list, f)
 
 # Function to load passwords from a JSON file 
-def load_passwords(filename):
+def load_passwords(filename="vault.txt"):
     if not os.path.exists(filename):
         return []
+
     with open(filename, "r", encoding="utf-8") as f:
-        return json.load(f)
+        data = json.load(f)
 
+    websites.clear()
+    usernames.clear()
+    encrypted_passwords.clear()
+    for item in data:
+        websites.append(item["website"])
+        usernames.append(item["username"])
+        encrypted_passwords.append(item["password"])
 
+    return data
 
   # Main method
 def main():
