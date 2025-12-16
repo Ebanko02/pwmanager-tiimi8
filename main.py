@@ -43,9 +43,9 @@ def is_strong_password(password: str) -> bool:
 
 # Password generator function (optional)
 def generate_password(length: int) -> str:
-    alphabet = string.asciiletters + string.digits + string.punctuation
+    alphabet = string.ascii_letters + string.digits + string.punctuation
     while True:
-        pw = "".join(random.choice(alphabet) for  in range(length))
+        pw = "".join(random.choice(alphabet) for _ in range(length))
         if is_strong_password(pw):
             return pw
 
@@ -76,12 +76,13 @@ def save_passwords(password_list, filename):
         json.dump(password_list, f)
 
 # Function to load passwords from a JSON file 
-def load_passwords():
-    passdef load_passwords(filename):
+def load_passwords(filename):
     if not os.path.exists(filename):
         return []
     with open(filename, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
 
   # Main method
 def main():
