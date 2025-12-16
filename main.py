@@ -78,7 +78,6 @@ def get_password(website=None):
         user = usernames[idx]
         pw = caesar_decrypt(encrypted_passwords[idx], SHIFT)
 
-        # UI-tulostus (ei haittaa testejä)
         print(f"Username: {user}")
         print(f"Password: {pw}")
 
@@ -89,7 +88,16 @@ def get_password(website=None):
 
 
 # Function to save passwords to a JSON file 
-def save_passwords(password_list, filename):
+def save_passwords(password_list=None, filename="vault.txt"):
+    if password_list is None:
+        password_list = []
+        for i in range(len(websites)):
+            password_list.append({
+                "website": websites[i],
+                "username": usernames[i],
+                "password": encrypted_passwords[i]  # salattu
+            })
+
     with open(filename, "w", encoding="utf-8") as f:
         json.dump(password_list, f)
 
