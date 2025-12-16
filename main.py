@@ -25,11 +25,11 @@ def caesar_decrypt(text, shift):
 
 # Password strength checker function (optional)
 def is_strong_password(password):
-    # ...
+    pass
 
 # Password generator function (optional)
 def generate_password(length):
-     """
+    pass
     Generate a random strong password of the specified length.
 
     Args:
