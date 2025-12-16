@@ -77,7 +77,11 @@ def save_passwords(password_list, filename):
 
 # Function to load passwords from a JSON file 
 def load_passwords():
-    pass
+    passdef load_passwords(filename):
+    if not os.path.exists(filename):
+        return []
+    with open(filename, "r", encoding="utf-8") as f:
+        return json.load(f)
 
   # Main method
 def main():
