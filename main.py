@@ -55,7 +55,14 @@ websites = []
 usernames = []
 
 # Function to add a new password 
-def add_password(website, username, password):
+def add_password(website=None, username=None, password=None):
+    if website is None:
+        website = input("Website: ").strip()
+    if username is None:
+        username = input("Username: ").strip()
+    if password is None:
+        password = input("Password: ")
+
     encrypted = caesar_encrypt(password, SHIFT)
     websites.append(website)
     usernames.append(username)
