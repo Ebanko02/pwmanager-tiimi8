@@ -57,21 +57,34 @@ class TestPasswordManager(unittest.TestCase):
         self.assertTrue(is_strong_password(password))
 
     def test_add_password(self):
-        # Test adding a password
         website = "example.net"
         username = "user456"
         password = "StrongP@ssw0rd"
+
         add_password(website, username, password)
 
-        # Check if the added password is in the lists
-        self.assertIn({"website": website, "username": username, "password": password}, self.test_passwords)
+        self.assertIn(website, websites)
+        idx = websites.index(website)
+        self.assertEqual(usernames[idx], username)
+
+        u, p = get_password(website)
+        self.assertEqual(u, username)
+        self.assertEqual(p, password)
 
     def test_get_password(self):
-        # Test retrieving an existing password
+        # lisää ensin testidataa vaultiin
+        add_password("example.com", "user123", "P@ssw0rd")
+
         website = "example.com"
         username, password = get_password(website)
         self.assertEqual(username, "user123")
         self.assertEqual(password, "P@ssw0rd")
+
+        # Test retrieving a non-existent password
+        website = "nonexistent.com"
+        username, password = get_password(website)
+        self.assertIsNone(username)
+        self.assertIsNone(password)
 
         # Test retrieving a non-existent password
         website = "nonexistent.com"
